@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flores para ti 💛</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Montserrat:wght@400;500&display=swap');
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#fbe4eb;color:#784657;overflow-x:hidden;font-family:Montserrat,Arial,sans-serif}
+main{min-height:100svh;position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 62%,#fff7d9 0%,#fce7e9 38%,#f5d5e1 100%)}
+main:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.35' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+.halo{position:absolute;width: min(80vw,630px);aspect-ratio:1;border:1px solid #d59aaa55;border-radius:50%;top:49%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 100px #fff0b530,inset 0 0 100px #fff0b530;z-index:-1}
+.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:#916271;margin:0 0 16px;animation:appear 1.8s both}
+header{text-align:center;z-index:2;padding:28px 18px 0}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(46px,8vw,86px);line-height:1.05;letter-spacing:-.035em;margin:0;text-shadow:0 3px 35px #ffffff60;animation:appear 2s .3s both}
+h1 em{font-weight:500;color:#ae5875}
+.subtitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;color:#916271;max-width:520px;line-height:1.4;text-wrap:pretty;margin:17px auto 0;animation:appear 2s .7s both}
+.garden{width:min(94vw,660px);height:min(51svh,440px);min-height:240px;overflow:visible;filter:drop-shadow(0 15px 20px #b9748b25)}
+.stem{fill:none;stroke:#95ad88;stroke-width:6;stroke-linecap:round}
+.leaf{fill:#abc39d}.leaf-light{fill:#c2d3a9}
+.flower{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite alternate}
+.flower:nth-of-type(2n){animation-delay:-2s;animation-duration:6s}
+.bloom{animation:open 1.7s cubic-bezier(.2,.7,.3,1) both;transform-box:fill-box;transform-origin:center}
+.f2 .bloom{animation-delay:.25s}.f3 .bloom{animation-delay:.5s}.f4 .bloom{animation-delay:.75s}.f5 .bloom{animation-delay:1s}
+button{font:500 10px Montserrat,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#804b5e;border:1px solid #dba2b5;border-radius:40px;background:#fff5d8;padding:16px 25px;cursor:pointer;transition:background .3s,transform .3s;z-index:3;margin-top:-8px}
+button:hover{background:#ffe9aa;transform:translateY(-2px)}button:focus-visible{outline:2px solid #ae5875;outline-offset:5px}
+footer{font-size:9px;letter-spacing:.22em;color:#916271;margin:24px 0 22px;text-transform:uppercase}
+.spark{position:absolute;pointer-events:none;border-radius:50%;background:#edbe68;box-shadow:0 0 12px #edbe68;animation:float var(--time) ease-in-out infinite;opacity:0}
+.heart{position:fixed;z-index:5;pointer-events:none;color:#d889a5;font-size:var(--size);animation:love 3s ease-out forwards}
+@keyframes sway{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+@keyframes open{from{opacity:0;transform:scale(.05) rotate(-30deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.7}100%{transform:translateY(-110px)}}
+@keyframes love{0%{opacity:0;transform:translate(-50%,0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--drift)),-280px) rotate(var(--angle)) scale(1.3)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+main{min-height:100vh;min-height:100svh;padding:24px max(20px,env(safe-area-inset-right)) 24px max(20px,env(safe-area-inset-left));padding-top:max(24px,env(safe-area-inset-top));padding-bottom:max(24px,env(safe-area-inset-bottom));overflow:hidden}
+main>*{flex-shrink:0}
+header{width:100%;padding:0}
+button{min-height:48px;max-width:100%;font-size:12px;line-height:1.5;letter-spacing:.08em;touch-action:manipulation;-webkit-tap-highlight-color:transparent;margin-top:8px}
+footer{font-size:11px;line-height:1.6;text-align:center;letter-spacing:.12em;margin:20px 0 0}
+@media(max-width:600px){
+  .eyebrow{font-size:11px;letter-spacing:.18em;line-height:1.6;margin-bottom:14px}
+  h1{font-size:clamp(42px,11vw,64px);line-height:1.12}
+  .subtitle{font-size:21px;line-height:1.4;max-width:29ch;margin-top:16px}
+  .garden{width:100%;max-width:390px;height:clamp(240px,42svh,360px);min-height:0;margin:10px 0}
+  button{width:min(100%,320px);padding:15px 18px;font-size:13px}
+  .halo{width:110vw;max-width:520px}
+}
+@media(max-height:650px) and (max-width:600px){
+  main{padding-top:max(20px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom))}
+  .eyebrow{margin-bottom:10px}
+  .subtitle{margin-top:12px}
+  .garden{height:240px;margin:0}
+  footer{margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.spark{display:none}.heart{display:none}}
+</style>
+</head>
+<body>
+<main>
+<div class="halo" aria-hidden="true"></div>
+<header><p class="eyebrow">Un pequeño detalle para ti</p><h1>Te amo <em>mucho</em></h1><p class="subtitle">Se que no estoy alla contigo pero igual te queria dar algo</p></header>
+<svg class="garden" viewBox="105 20 450 425" role="img" aria-label="Ramo de cinco flores amarillas que se mecen suavemente">
+<defs>
+<linearGradient id="petal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff7bc"/><stop offset=".55" stop-color="#ffe68f"/><stop offset="1" stop-color="#efca71"/></linearGradient>
+<radialGradient id="center"><stop stop-color="#d8ac79"/><stop offset=".72" stop-color="#c59568"/><stop offset="1" stop-color="#edce94"/></radialGradient>
+<g id="petals"><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)"/><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)" transform="rotate(30)"/><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)" transform="rotate(60)"/><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)" transform="rotate(90)"/><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)" transform="rotate(120)"/><ellipse cx="0" cy="-34" rx="13" ry="30" fill="url(#petal)" transform="rotate(150)"/></g>
+<g id="head"><use href="#petals"/><use href="#petals" transform="rotate(180)"/><circle r="23" fill="url(#center)"/><g fill="#fff0b1" opacity=".7"><circle cx="-10" cy="-9" r="2"/><circle cx="3" cy="-14" r="1.8"/><circle cx="13" cy="-6" r="2"/><circle cx="-15" cy="3" r="1.7"/><circle cx="-3" cy="0" r="2"/><circle cx="7" cy="6" r="1.6"/><circle cx="-7" cy="12" r="2"/><circle cx="7" cy="15" r="1.7"/><circle cx="16" cy="6" r="1.5"/></g></g>
+</defs>
+<g class="flower f1"><path class="stem" d="M332 410 Q245 270 188 167"/><path class="leaf" d="M265 304 Q189 306 178 243 Q236 241 265 304"/><g transform="translate(186 161) rotate(-18) scale(.82)"><g class="bloom"><use href="#head"/></g></g></g>
+<g class="flower f2"><path class="stem" d="M327 410 Q384 248 463 181"/><path class="leaf" d="M400 272 Q459 277 486 225 Q430 214 400 272"/><g transform="translate(464 169) rotate(22) scale(.85)"><g class="bloom"><use href="#head"/></g></g></g>
+<g class="flower f3"><path class="stem" d="M330 415 Q298 260 320 104"/><path class="leaf-light" d="M313 243 Q259 210 271 161 Q317 183 313 243"/><path class="leaf" d="M318 283 Q374 247 367 201 Q322 215 318 283"/><g transform="translate(321 97)"><g class="bloom"><use href="#head"/></g></g></g>
+<g class="flower f4"><path class="stem" d="M333 415 Q280 316 248 249"/><path class="leaf-light" d="M299 357 Q233 362 220 310 Q272 307 299 357"/><g transform="translate(243 236) rotate(-10) scale(.9)"><g class="bloom"><use href="#head"/></g></g></g>
+<g class="flower f5"><path class="stem" d="M330 415 Q389 329 405 257"/><path class="leaf-light" d="M355 368 Q421 375 448 321 Q389 311 355 368"/><g transform="translate(408 245) rotate(15) scale(.93)"><g class="bloom"><use href="#head"/></g></g></g>
+<path d="M312 390 Q331 401 348 389 L346 406 Q329 415 316 404Z" fill="#d991aa"/><path d="M327 403 Q278 366 281 400 Q289 425 327 403 Q370 374 369 401 Q358 424 327 403" fill="none" stroke="#efb5c8" stroke-width="5"/><path d="M326 405 Q310 425 300 432 M331 405 Q348 420 352 434" fill="none" stroke="#efb5c8" stroke-width="5"/>
+</svg>
+<button type="button" id="love">Espero que te haya gustado</button>
+<footer>Para ti, con mucho amor</footer>
+</main>
+<script>
+const main=document.querySelector('main');
+for(let i=0;i<24;i++){const dot=document.createElement('span');dot.className='spark';dot.setAttribute('aria-hidden','true');dot.style.cssText=`left:${5+Math.random()*90}%;top:${25+Math.random()*70}%;width:${2+Math.random()*3}px;height:${2+Math.random()*3}px;--time:${5+Math.random()*7}s;animation-delay:${-Math.random()*12}s`;main.appendChild(dot)}
+document.querySelector('#love').addEventListener('click',e=>{const rect=e.currentTarget.getBoundingClientRect();for(let i=0;i<16;i++){setTimeout(()=>{const heart=document.createElement('span');heart.className='heart';heart.textContent='♥';heart.setAttribute('aria-hidden','true');heart.style.cssText=`left:${rect.left+rect.width/2+(Math.random()-.5)*120}px;top:${rect.top}px;--size:${14+Math.random()*22}px;--drift:${(Math.random()-.5)*240}px;--angle:${(Math.random()-.5)*80}deg`;document.body.appendChild(heart);setTimeout(()=>heart.remove(),3100)},i*65)}});
+</script>
+</body>
+</html>
+
+
