@@ -55,7 +55,7 @@ footer{font-size:11px;line-height:1.6;text-align:center;letter-spacing:.12em;mar
   .garden{height:240px;margin:0}
   footer{margin-top:16px}
 }
-@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.spark{display:none}.heart{display:none}}
+@media(prefers-reduced-motion:reduce){html:not(.motion-enabled) *,html:not(.motion-enabled) *:before{animation:none!important;transition:none!important}html:not(.motion-enabled) .spark,html:not(.motion-enabled) .heart{display:none}}
 </style>
 </head>
 <body>
@@ -82,9 +82,10 @@ footer{font-size:11px;line-height:1.6;text-align:center;letter-spacing:.12em;mar
 <script>
 const main=document.querySelector('main');
 for(let i=0;i<24;i++){const dot=document.createElement('span');dot.className='spark';dot.setAttribute('aria-hidden','true');dot.style.cssText=`left:${5+Math.random()*90}%;top:${25+Math.random()*70}%;width:${2+Math.random()*3}px;height:${2+Math.random()*3}px;--time:${5+Math.random()*7}s;animation-delay:${-Math.random()*12}s`;main.appendChild(dot)}
-document.querySelector('#love').addEventListener('click',e=>{const rect=e.currentTarget.getBoundingClientRect();for(let i=0;i<16;i++){setTimeout(()=>{const heart=document.createElement('span');heart.className='heart';heart.textContent='♥';heart.setAttribute('aria-hidden','true');heart.style.cssText=`left:${rect.left+rect.width/2+(Math.random()-.5)*120}px;top:${rect.top}px;--size:${14+Math.random()*22}px;--drift:${(Math.random()-.5)*240}px;--angle:${(Math.random()-.5)*80}deg`;document.body.appendChild(heart);setTimeout(()=>heart.remove(),3100)},i*65)}});
+document.querySelector('#love').addEventListener('click',e=>{document.documentElement.classList.add('motion-enabled');const rect=e.currentTarget.getBoundingClientRect();for(let i=0;i<16;i++){setTimeout(()=>{const heart=document.createElement('span');heart.className='heart';heart.textContent='♥';heart.setAttribute('aria-hidden','true');heart.style.cssText=`left:${rect.left+rect.width/2+(Math.random()-.5)*120}px;top:${rect.top}px;--size:${14+Math.random()*22}px;--drift:${(Math.random()-.5)*240}px;--angle:${(Math.random()-.5)*80}deg`;document.body.appendChild(heart);setTimeout(()=>heart.remove(),3100)},i*65)}});
 </script>
 </body>
 </html>
+
 
 
